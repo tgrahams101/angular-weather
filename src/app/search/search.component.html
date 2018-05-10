@@ -1,0 +1,15 @@
+<section [ngStyle]="{'font-family': 'Verdana'}">
+  <input type="text" [(ngModel)]="zip" placeholder="What's your ZIP code" />
+  <button (click)="showSearchTerm(zip)"> Weather me! </button>
+  <section *ngIf="weatherObject">
+    <p>
+      <b> Name of Location:  </b>{{weatherObject.name}} <br />
+      <b> Current Temparature in Fahrenheit:</b> {{weatherObject.main.temp}} <br />
+      <b>Wind Speed:</b> {{weatherObject.wind.speed}} mph  <br />
+    </p>
+    <ul>
+      <li><b>High Temp for Day</b> {{weatherObject.main.temp_max}} </li>
+      <li><b>Low Temp for Day</b>  {{weatherObject.main.temp_min}}</li>
+    </ul>
+  </section>
+</section>
