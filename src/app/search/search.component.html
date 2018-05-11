@@ -1,6 +1,6 @@
 <section [ngStyle]="{'font-family': 'Verdana'}">
-  <input type="text" [(ngModel)]="zip" placeholder="What's your ZIP code" />
-  <button (click)="showSearchTerm(zip)"> Weather me! </button>
+  <input type="text" [(ngModel)]="zip" placeholder="What's your ZIP code" (keyup)="searchWeather(zip)"/>
+  <button (click)="searchWeather(zip)"> Weather me! </button>
   <section *ngIf="weatherObject">
     <p>
       <b> Name of Location:  </b>{{weatherObject.name}} <br />
